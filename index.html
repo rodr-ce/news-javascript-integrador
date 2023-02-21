@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScaloNews</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/mediaqueries.css" />
+    <link rel="stylesheet" href="./styles/animations.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <ul class="header__links">
+        <li>
+          <a href="https://www.facebook.com/" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/" target="_blank">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://open.spotify.com/" target="_blank">
+            <i class="fa-brands fa-spotify"></i>
+          </a>
+        </li>
+      </ul>
+      <div class="header__title-bar">
+        <div class="header__nav-bar">
+          <span id="menu-toggle-open">
+            <i class="fa-solid fa-bars"></i>
+          </span>
+
+          <nav class="header__nav">
+            <ul class="header__nav__list">
+              <li>
+                <span id="menu-toggle-close">
+                  <i class="fa-solid fa-x"></i>
+                </span>
+              </li>
+              <li>
+                <a href="./index.html">Noticias</a>
+              </li>
+              <li>
+                <a href="./about.html">Sobre Nosotros</a>
+              </li>
+              <li>
+                <a href="./about.html#contact">Contacto</a>
+              </li>
+              <li>
+                <a href="./login-register.html">Login/Registro</a>
+              </li>
+            </ul>
+            <div class="header__nav__overlay"></div>
+          </nav>
+        </div>
+
+        <div>☀️</div>
+
+        <div class="header__bookmark">
+          <label for="bookmarks"><i class="fa-regular fa-bookmark"></i></label>
+          <input type="checkbox" name="bookmarks" id="bookmarks" />
+          <div class="header__favourites">
+            <ul class="article-list">
+              <li></li>
+            </ul>
+            <span><a href="#">Ver más</a></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="newsfeed">
+        
+      </section>
+    </main>
+    <footer>
+      <div class="footer__links">
+        <a href="./about.html">Sobre nosotros</a>
+        <a href="./about.html#contact">Contacto</a>
+        <a href="#">Terminos y condiciones</a>
+      </div>
+    </footer>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/animations.js"></script>
+  </body>
+</html>
