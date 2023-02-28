@@ -1,12 +1,15 @@
-let navSideBarBtnOpen = document.querySelector('#menu-toggle-open')
-let navSideBarBtnClose = document.querySelector('#menu-toggle-close')
-let navSideBarOverlay = document.querySelector('.header__nav__overlay')
-let navSideBar = document.querySelector('.header__nav')
-let bookmarkToggleBtn = document.querySelector('#toggle-bookmarks')
-let bookmarkContainer = document.querySelector('.bookmarks-container')
-let bookmarkSaveBtns = document.querySelectorAll('.bookmark-btn')
-let bookmarksDesc = document.querySelector('.bookmarks-description')
-let bookmarksList = document.querySelector('.bookmark-list')
+const navSideBarBtnOpen = document.querySelector('#menu-toggle-open')
+const navSideBarBtnClose = document.querySelector('#menu-toggle-close')
+const navSideBarOverlay = document.querySelector('.header__nav__overlay')
+const navSideBar = document.querySelector('.header__nav')
+const bookmarkToggleBtn = document.querySelector('#toggle-bookmarks')
+const bookmarkContainer = document.querySelector('.bookmarks-container')
+const bookmarkSaveBtns = document.querySelectorAll('.bookmark-btn')
+const bookmarksDesc = document.querySelector('.bookmarks-description')
+const bookmarksList = document.querySelector('.bookmark-list')
+const categorySeleccion = document.querySelector('#seleccion')
+const categoryLiga = document.querySelector('#liga')
+const categoryLibertadores = document.querySelector('#libertadores')
 
 let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
 
@@ -69,9 +72,50 @@ const renderBookmarks = () => {
 
 renderBookmarks()
 
+let currentCategory = seleccion
+
+const renderLib = () => {
+  currentCategory = [...libertadores]
+  newsFeed.innerHTML = ''
+  categoryLibertadores.classList.add('selected-category')
+  renderArticles(libertadores)
+  categorySeleccion.classList.remove('selected-category')
+  categoryLiga.classList.remove('selected-category')
+}
+
+const renderLigaPro = () => {
+  currentCategory = [...ligaprofesional]
+  newsFeed.innerHTML = ''
+  categoryLiga.classList.add('selected-category')
+  renderArticles(ligaprofesional)
+  categorySeleccion.classList.remove('selected-category')
+  categoryLibertadores.classList.remove('selected-category')
+}
+
+const renderSeleccion = () => {
+  currentCategory = [...seleccion]
+  newsFeed.innerHTML = ''
+  categorySeleccion.classList.add('selected-category')
+  renderArticles(seleccion)
+  categoryLiga.classList.remove('selected-category')
+  categoryLibertadores.classList.remove('selected-category')
+}
+
+const animations = () => {
+  navSideBarBtnOpen.addEventListener('click', toggleNavBar)
+  navSideBarBtnClose.addEventListener('click', toggleNavBar)
+  navSideBarOverlay.addEventListener('click', toggleNavBar)
+  bookmarkToggleBtn.addEventListener('click', toggleBookmarks)
+  categoryLibertadores.addEventListener('click', renderLib)
+  categoryLiga.addEventListener('click', renderLigaPro)
+  categorySeleccion.addEventListener('click', renderSeleccion)
+}
+
+animations()
+
 for (let i = 0; i < bookmarkSaveBtns.length; i++) {
   bookmarkSaveBtns[i].addEventListener('click', function () {
-    let article = noticias[i];
+    let article = currentCategory[i]; //CAMBIAR PARA USAR LA CATEGORIA SELECCIONADA
     let index = bookmarks.findIndex((e) => e.title === article.title);
 
     if (index === -1) {
@@ -83,14 +127,3 @@ for (let i = 0; i < bookmarkSaveBtns.length; i++) {
     renderBookmarks()
   });
 }
-
-
-
-const animations = () => {
-  navSideBarBtnOpen.addEventListener('click', toggleNavBar)
-  navSideBarBtnClose.addEventListener('click', toggleNavBar)
-  navSideBarOverlay.addEventListener('click', toggleNavBar)
-  bookmarkToggleBtn.addEventListener('click', toggleBookmarks)
-}
-
-animations()

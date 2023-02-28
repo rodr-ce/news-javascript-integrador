@@ -9,13 +9,13 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="./styles/mediaqueries.css" />
-  <link rel="stylesheet" href="./styles/animations.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+  <!-- ----------------------HEADER---------------------- -->
   <header>
     <ul class="header__links">
       <li>
@@ -45,6 +45,7 @@
       </li>
     </ul>
     <div class="header__title-bar">
+      <!-- ----------------------NAV---------------------- -->
       <div class="header__nav-bar">
         <button id="menu-toggle-open">
           <i class="fa-solid fa-bars"></i>
@@ -69,35 +70,47 @@
           <div class="header__nav__overlay"></div>
         </nav>
       </div>
+      <!-- ----------------------TITLE---------------------- -->
       <div>☀️</div>
+      <!-- ----------------------BOOKMARKS---------------------- -->
       <div class="header__bookmarks">
         <button id="toggle-bookmarks">
           <i class="fa-regular fa-bookmark"></i>
         </button>
       </div>
   </header>
+  <!-- ----------------------CONTAINER---------------------- -->
   <div class="bookmarks-container">
     <h3 class="bookmarks-description"></h3>
     <ul class="bookmark-list">
     </ul>
   </div>
-  <!-- MAIN -->
   <main>
+    <!-- ----------------------HERO---------------------- -->
     <section id="hero">
-
+      <span class="hero-subtitle">
+        Agregramos noticias de la Selección y el futbol local para tu comodidad.
+      </span>
     </section>
+    <!-- ----------------------CATEGORIES---------------------------------------------------------------------------------------- -->
+    <div class="category-selection">
+      <button id="seleccion" class="category-btn selected-category">☀️ Selección</button>
+      <button id="liga" class="category-btn">⚽ Liga Profesional</button>
+      <button id="libertadores" class="category-btn">🏆 Libertadores</button>
+    </div>
+    <!-- ----------------------NEWSFEED---------------------- -->
     <section id="newsfeed">
-
     </section>
   </main>
-  <!-- FOOTER -->
   <footer>
+    <!-- ----------------------FOOTER---------------------- -->
     <div class="footer__links">
       <a href="./about.html">Sobre nosotros</a>
       <a href="./about.html#contact">Contacto</a>
       <a href="#">Terminos y condiciones</a>
     </div>
   </footer>
+  <script src="./scripts/data.js"></script>
   <script src="./scripts/fetch.js"></script>
   <script src="./scripts/main.js"></script>
 </body>

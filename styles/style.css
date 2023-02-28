@@ -8,7 +8,7 @@
     --yellow: rgb(230, 181, 59);
 }
 
-/* ------------------------------------------RESETEO DE ESTILOS */
+/* ------------------------------------------RESET */
 
 * {
     box-sizing: border-box;
@@ -96,6 +96,7 @@ header {
     background-color: var(--dark-blue);
     padding-top: 12px;
     color: white;
+    font-weight: 600;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,7 +141,7 @@ header {
 .bookmark-list {
     align-self: flex-start;
     height: 90%;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,7 +157,8 @@ header {
     padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    justify-content: center;
+    gap: 7px;
 }
 
 .bookmark-list-element span {
@@ -171,7 +173,50 @@ header {
     align-self: flex-end;
 }
 
-/* ------------------------------------------BODY */
+/* ------------------------------------------HERO */
+
+#hero {
+    width: 100%;
+    height: 100px;
+    background-image: url(./images/scaloneta.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--transparent);
+}
+
+/* ------------------------------------------CATEGORY */
+
+.category-selection {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+}
+
+.category-btn {
+    font-weight: 600;
+    padding: 5px;
+}
+
+.selected-category {
+    border-bottom: 2px solid var(--dark-blue);
+}
+
+/* ------------------------------------------FEED */
 
 #newsfeed {
     padding: 10px;
@@ -230,7 +275,7 @@ header {
     align-self: flex-end;
 }
 
-/* ------------------------------------------FOOTER */
+/* ------------------------------------------FEED */
 
 footer {
     background-color: var(--dark-blue);
@@ -250,3 +295,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
 }
+
+
+
+
