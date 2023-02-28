@@ -3,7 +3,7 @@ let navSideBarBtnClose = document.querySelector('#menu-toggle-close')
 let navSideBarOverlay = document.querySelector('.header__nav__overlay')
 let navSideBar = document.querySelector('.header__nav')
 let bookmarkToggleBtn = document.querySelector('#toggle-bookmarks')
-let bookmarkContainer = document.querySelector('.header__bookmarks-container')
+let bookmarkContainer = document.querySelector('.bookmarks-container')
 let bookmarkSaveBtns = document.querySelectorAll('.bookmark-btn')
 let bookmarksDesc = document.querySelector('.bookmarks-description')
 let bookmarksList = document.querySelector('.bookmark-list')
@@ -41,6 +41,17 @@ const saveToLocalStorage = (element) => {
   localStorage.setItem("bookmarks", JSON.stringify(element));
 };
 
+const addBookmarkDeleteListeners = () => {
+  let bookmarkDeleteBtns = document.querySelectorAll('.bookmark-delete-btn')
+  for (let i = 0; i < bookmarkDeleteBtns.length; i++) {
+    bookmarkDeleteBtns[i].addEventListener('click', function () {
+      bookmarks.splice(i, 1)
+      saveToLocalStorage(bookmarks)
+      renderBookmarks()
+    })
+  }
+}
+
 const renderBookmarks = () => {
   if (!bookmarks.length) {
     bookmarksDesc.innerHTML = 'No hay elementos guardados'
@@ -52,8 +63,11 @@ const renderBookmarks = () => {
       let currentBookmark = getBookmarkHTML(bookmarks[i])
       bookmarksList.innerHTML += currentBookmark
     }
+    addBookmarkDeleteListeners()
   }
 }
+
+renderBookmarks()
 
 for (let i = 0; i < bookmarkSaveBtns.length; i++) {
   bookmarkSaveBtns[i].addEventListener('click', function () {
@@ -70,6 +84,8 @@ for (let i = 0; i < bookmarkSaveBtns.length; i++) {
   });
 }
 
+
+
 const animations = () => {
   navSideBarBtnOpen.addEventListener('click', toggleNavBar)
   navSideBarBtnClose.addEventListener('click', toggleNavBar)
@@ -77,5 +93,4 @@ const animations = () => {
   bookmarkToggleBtn.addEventListener('click', toggleBookmarks)
 }
 
-renderBookmarks()
 animations()

@@ -115,7 +115,7 @@ header {
 
 /* ------------------------------------------BOOKMARKS */
 
-.header__bookmarks-container {
+.bookmarks-container {
     background-color: ghostwhite;
     z-index: 4;
     position: fixed;
@@ -123,6 +123,7 @@ header {
     right: 0;
     left: 0;
     bottom: 0;
+    overflow: scroll;
     transform: translateX(100%);
     transition: transform 0.2s;
     display: flex;

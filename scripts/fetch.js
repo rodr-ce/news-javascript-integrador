@@ -1,17 +1,18 @@
-const key = 'fb29182220194524b0696687f46a2fed' // API Key fb29182220194524b0696687f46a2fed
-let newsFeed = document.querySelector('#newsfeed')
+const key = 'fb29182220194524b0696687f46a2fed' // se iba a trabajar con newsapi.org pero el plan free solo lo permite en localhoost
 
-/*
 const getNews = async () => {
-    const baseURL = "https://newsapi.org/v2/top-headlines?";
-    const query = "";
-    
-    const response = await fetch (`https://newsapi.org/v2/everything?q=selección%20argentina%20de%20fútbol&pageSize=20&apiKey=${key}`)
-    const {articles} = await response.json()
-    console.log(articles)
-    return articles
-  }
-*/
+  const baseURL = "https://newsapi.org/v2/top-headlines?";
+  const query = "";
+
+  const response = await fetch(`https://newsapi.org/v2/everything?q=selección%20argentina%20de%20fútbol&pageSize=30&apiKey=${key}`)
+  const { articles } = await response.json()
+  return articles
+}
+
+// entonces hago el
+
+
+const newsFeed = document.querySelector('#newsfeed')
 
 const noticias = [
   {
@@ -68,6 +69,8 @@ const noticias = [
   }
 ]
 
+
+
 const transformDate = (date) => {
   let getdate = date.split('T')
   let newdate = getdate[0].split('-').reverse().join('/')
@@ -96,8 +99,8 @@ const renderArticles = (articles) => {
 }
 
 async function init() {
-    //const articles = await getNews()
-    renderArticles(noticias)
+  const news = await getNews()
+  renderArticles(news)
 }
 
 init()
