@@ -4,14 +4,14 @@ const navSideBarOverlay = document.querySelector('.header__nav__overlay')
 const navSideBar = document.querySelector('.header__nav')
 const bookmarkToggleBtn = document.querySelector('#toggle-bookmarks')
 const bookmarkContainer = document.querySelector('.bookmarks-container')
-const bookmarkSaveBtns = document.querySelectorAll('.bookmark-btn')
+let bookmarkSaveBtns = document.querySelectorAll('.bookmark-btn')
 const bookmarksDesc = document.querySelector('.bookmarks-description')
 const bookmarksList = document.querySelector('.bookmark-list')
 const categorySeleccion = document.querySelector('#seleccion')
 const categoryLiga = document.querySelector('#liga')
 const categoryLibertadores = document.querySelector('#libertadores')
 
-let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+/* ANIMACIONES */
 
 const toggleNavBar = () => {
   if (navSideBar.classList.contains('toggle__nav')) {
@@ -29,22 +29,26 @@ const toggleBookmarks = () => {
   }
 }
 
-const getBookmarkHTML = (bookmark) => {
+/* MARCADORES */
+
+let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+const saveToLocalStorage = (elements) => {
+  localStorage.setItem("bookmarks", JSON.stringify(elements));
+};
+
+const getBookmarkHTML = (article) => {
   return `
   <li class="bookmark-list-element">
-    <p><span>${bookmark.title}</span></p>
-    <p class="bookmark-source">En <span>${bookmark.source.name}<span></p>
-    <p class="bookmark-link"><a href="${bookmark.url}">Ir a la noticia</a></p>
+    <p><span>${article.title}</span></p>
+    <p class="bookmark-source">En <span>${article.source.name}<span></p>
+    <p class="bookmark-link"><a href="${article.url}">Ir a la noticia</a></p>
     <button class="bookmark-delete-btn"><i class="fa-solid fa-x"></i></button>
   </li>
   `
 }
 
-const saveToLocalStorage = (element) => {
-  localStorage.setItem("bookmarks", JSON.stringify(element));
-};
-
-const addBookmarkDeleteListeners = () => {
+const addBookmarkListeners = () => {
   let bookmarkDeleteBtns = document.querySelectorAll('.bookmark-delete-btn')
   for (let i = 0; i < bookmarkDeleteBtns.length; i++) {
     bookmarkDeleteBtns[i].addEventListener('click', function () {
@@ -66,11 +70,26 @@ const renderBookmarks = () => {
       let currentBookmark = getBookmarkHTML(bookmarks[i])
       bookmarksList.innerHTML += currentBookmark
     }
-    addBookmarkDeleteListeners()
+    addBookmarkListeners()
   }
 }
 
+const saveBookmark = (i) => {
+  let article = currentCategory[i]; // cambiar para usar la categoria seleccionada
+  let index = bookmarks.findIndex((e) => e.title === article.title);
+
+  if (index === -1) {
+    bookmarks.push(article);
+  } else {
+    bookmarks.splice(index, 1);
+  }
+  saveToLocalStorage(bookmarks)
+  renderBookmarks()
+};
+
 renderBookmarks()
+
+/* render categories */
 
 let currentCategory = seleccion
 
@@ -81,6 +100,8 @@ const renderLib = () => {
   renderArticles(libertadores)
   categorySeleccion.classList.remove('selected-category')
   categoryLiga.classList.remove('selected-category')
+  bookmarkSaveBtns = document.querySelectorAll('.bookmark-btn')
+  bookmarker()
 }
 
 const renderLigaPro = () => {
@@ -90,6 +111,8 @@ const renderLigaPro = () => {
   renderArticles(ligaprofesional)
   categorySeleccion.classList.remove('selected-category')
   categoryLibertadores.classList.remove('selected-category')
+  bookmarkSaveBtns = document.querySelectorAll('.bookmark-btn')
+  bookmarker()
 }
 
 const renderSeleccion = () => {
@@ -99,6 +122,8 @@ const renderSeleccion = () => {
   renderArticles(seleccion)
   categoryLiga.classList.remove('selected-category')
   categoryLibertadores.classList.remove('selected-category')
+  bookmarkSaveBtns = document.querySelectorAll('.bookmark-btn')
+  bookmarker()
 }
 
 const animations = () => {
@@ -111,19 +136,15 @@ const animations = () => {
   categorySeleccion.addEventListener('click', renderSeleccion)
 }
 
+const bookmarker = () => {
+  for (let i = 0; i < bookmarkSaveBtns.length; i++) {
+    bookmarkSaveBtns[i].addEventListener('click', function() { saveBookmark(i) });
+  }
+}
+
+bookmarker()
 animations()
 
-for (let i = 0; i < bookmarkSaveBtns.length; i++) {
-  bookmarkSaveBtns[i].addEventListener('click', function () {
-    let article = currentCategory[i]; //CAMBIAR PARA USAR LA CATEGORIA SELECCIONADA
-    let index = bookmarks.findIndex((e) => e.title === article.title);
-
-    if (index === -1) {
-      bookmarks.push(article);
-    } else {
-      bookmarks.splice(index, 1);
-    }
-    saveToLocalStorage(bookmarks)
-    renderBookmarks()
-  });
-}
+/* for (let i = 0; i < bookmarkSaveBtns.length; i++) {
+  bookmarkSaveBtns[i].addEventListener('click', function() { saveBookmark(i) });
+} */
