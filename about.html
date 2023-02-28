@@ -2,116 +2,127 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre nosotros - ScaloNews</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/mediaqueries.css" />
-    <link rel="stylesheet" href="./styles/animations.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScaloNews</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/mediaqueries.css" />
+  <link rel="stylesheet" href="./styles/about-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <header>
-        <ul class="header__links">
+  <!-- ----------------------HEADER---------------------- -->
+  <header>
+    <ul class="header__links">
+      <li>
+        <a href="https://www.facebook.com/" target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.tiktok.com/" target="_blank">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://open.spotify.com/" target="_blank">
+          <i class="fa-brands fa-spotify"></i>
+        </a>
+      </li>
+    </ul>
+    <div class="header__title-bar">
+      <!-- ----------------------NAV---------------------- -->
+      <div class="header__nav-bar">
+        <button id="menu-toggle-open">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="header__nav">
+          <ul class="header__nav__list">
             <li>
-                <a href="https://www.facebook.com/" target="_blank">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
+              <button id="menu-toggle-close">
+                <i class="fa-solid fa-x"></i>
+              </button>
             </li>
             <li>
-                <a href="https://www.youtube.com/" target="_blank">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
+              <a href="./about.html">Sobre Nosotros</a>
             </li>
             <li>
-                <a href="https://www.instagram.com/" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
+              <a href="./about.html#contact">Contactenos</a>
             </li>
             <li>
-                <a href="https://www.tiktok.com/" target="_blank">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
+              <a href="./login-register.html"><i class="fa-solid fa-user"></i> Login/Registro</a>
             </li>
-            <li>
-                <a href="https://open.spotify.com/" target="_blank">
-                    <i class="fa-brands fa-spotify"></i>
-                </a>
-            </li>
-        </ul>
-        <div class="header__title-bar">
-            <div class="header__nav-bar">
-                <button id="menu-toggle-open">
-                  <i class="fa-solid fa-bars"></i>
-                </button>
-      
-                <nav class="header__nav">
-                  <ul class="header__nav__list">
-                    <li>
-                      <button id="menu-toggle-close">
-                        <i class="fa-solid fa-x"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <a href="./about.html">Sobre Nosotros</a>
-                    </li>
-                    <li>
-                      <a href="./about.html#contact">Contactenos</a>
-                    </li>
-                    <li>
-                      <a href="./login-register.html"><i class="fa-solid fa-user"></i> Login/Registro</a>
-                    </li>
-                  </ul>
-                  <div class="header__nav__overlay"></div>
-                </nav>
-              </div>
-
-            <div>☀️</div>
-
-            <div class="header__bookmark">
-                <label for="bookmarks"><i class="fa-regular fa-bookmark"></i></label>
-                <input type="checkbox" name="bookmarks" id="bookmarks" />
-                <div class="header__favourites">
-                    <ul class="article-list">
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section id="about">
-            <h1>Sobre Nosotros</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto minus culpa quidem perspiciatis rem?
-                Fugiat cupiditate similique doloremque aliquam ullam sapiente, architecto quia minima, illum voluptatum,
-                rerum fugit nisi corrupti.</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quia deleniti architecto alias
-                placeat quo totam! Aperiam temporibus omnis accusamus quasi velit quae voluptate illo culpa dicta.
-                Itaque, quibusdam architecto.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia sequi sed explicabo nisi porro commodi
-                nemo molestias necessitatibus unde ipsum consequatur accusantium suscipit libero, rerum ut dolorem
-                dolore perspiciatis quo!</p>
-        </section>
-        <section id="contact">
-            <h1>Contacto</h1>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Telefono: 48329482394</p>
-            <p>Email: contacto@scalonews.com</p>
-        </section>
-    </main>
-    <footer>
-        <div class="footer__links">
-            <a href="./about.html">Sobre nosotros</a>
-            <a href="./about.html#contact">Contactenos</a>
-            <a href="#">Terminos y condiciones</a>
-        </div>
-    </footer>
-    <script src="./scripts/main.js"></script>
+          </ul>
+          <div class="header__nav__overlay"></div>
+        </nav>
+      </div>
+      <!-- ----------------------TITLE---------------------- -->
+      <div>☀️</div>
+      <!-- ----------------------BOOKMARKS---------------------- -->
+      <div class="header__bookmarks">
+        <button id="toggle-bookmarks">
+          <span> </span>
+        </button>
+      </div>
+  </header>
+  <!-- ----------------------CONTAINER---------------------- -->
+  <div class="bookmarks-container">
+    <h3 class="bookmarks-description"></h3>
+    <ul class="bookmark-list">
+    </ul>
+  </div>
+  <main>
+    <!-- ----------------------HERO---------------------- -->
+    <section id="hero">
+      <span class="hero-subtitle">
+        Agregramos noticias de la Selección y el futbol local para tu comodidad.
+      </span>
+    </section>
+    <div class="back"><a href="./index.html"><i class="fa-solid fa-arrow-left"></i> Volver al home</a></div>
+    <!-- ----------------------ABOUT Y CONTACTO---------------------------------------------------------------------------------------- -->
+    <section id="about">
+        <h1>Sobre Nosotros</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto minus culpa quidem perspiciatis rem?
+            Fugiat cupiditate similique doloremque aliquam ullam sapiente, architecto quia minima, illum voluptatum,
+            rerum fugit nisi corrupti.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quia deleniti architecto alias
+            placeat quo totam! Aperiam temporibus omnis accusamus quasi velit quae voluptate illo culpa dicta.
+            Itaque, quibusdam architecto.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia sequi sed explicabo nisi porro commodi
+            nemo molestias necessitatibus unde ipsum consequatur accusantium suscipit libero, rerum ut dolorem
+            dolore perspiciatis quo!</p>
+    </section>
+    <section id="contact">
+        <h4>Contactenos</h4>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Telefono: (231) 4292838</p>
+        <p>Email: contacto@scalonews.com</p>
+    </section>
+  </main>
+  <footer>
+    <!-- ----------------------FOOTER---------------------- -->
+    <div class="footer__links">
+      <a href="./about.html">Sobre nosotros</a>
+      <a href="./about.html#contact">Contactenos</a>
+      <a href="#">Terminos y condiciones</a>
+    </div>
+  </footer>
+  <script src="./scripts/main.js"></script>
 </body>
 
 </html>

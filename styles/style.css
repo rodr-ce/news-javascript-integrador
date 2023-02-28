@@ -173,6 +173,10 @@ header {
     align-self: flex-end;
 }
 
+.marked {
+    color: red
+}
+
 /* ------------------------------------------HERO */
 
 #hero {
@@ -295,7 +299,4 @@ footer {
     display: flex;
     justify-content: space-evenly;
 }
-
-
-
 

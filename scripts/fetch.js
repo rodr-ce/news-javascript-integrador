@@ -10,8 +10,6 @@ const getNews = async () => {
 
  */
 
-const newsFeed = document.querySelector('#newsfeed')
-
 const transformDate = (date) => {
   let getdate = date.split('T')
   let newdate = getdate[0].split('-').reverse().join('/')
@@ -45,4 +43,3 @@ async function init() {
 }
 
 init()
-
