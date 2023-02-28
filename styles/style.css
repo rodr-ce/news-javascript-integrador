@@ -1,18 +1,20 @@
 
 :root {
-    /* para colores */
     --transparent: rgba(255, 255, 255, 0.5);
     --transparent-dark: rgba(53, 53, 53, 0.562);
+    --transparent-dark2: rgba(85, 84, 84, 0.3);
     --dark-blue: rgb(0, 129, 201);
     --light-blue: rgb(91, 192, 248);
-    --yellow: rgb(255, 201, 60);
+    --yellow: rgb(230, 181, 59);
 }
+
+/* ------------------------------------------RESETEO DE ESTILOS */
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-/*  border: 1px solid black; */}
+}
 
 a:link, a:visited, a:active {
     text-decoration: none;
@@ -23,13 +25,28 @@ ul, ol {
     list-style: none;
 } 
 
+button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* ------------------------------------------GENERAL */
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 70px;
-    font-family: "Poppins";
+    font-family: sans-serif;
 }
 
-/* HEADER */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------------------------------HEADER */
 
 header {
     width: 100%;
@@ -58,18 +75,21 @@ header {
     color: var(--white);
 }
 
-/* NAV */
+/* ------------------------------------------NAV */
 
 .header__nav {
-    z-index: 2;
-    position: absolute;
-    top: 22px;
+    z-index: 5;
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 0.2s;
+    top: 21px;
     left: 0;
-    height: 100%;
-    width: 0;
-    transition: width 80ms linear;
-    overflow: hidden;
-    display: flex;
+    right: 0;
+    bottom: 0;
+}
+ 
+.toggle__nav {
+    transform: translateX(0);
 }
 
 .header__nav__list {
@@ -80,6 +100,7 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    height: 100%;
     width: 70%;
 }
 
@@ -89,38 +110,67 @@ header {
     width: 30%;
     position: absolute;
     right: 0;
+    top: 0px;
 }
 
-.show-nav {
-    width: 100%;   
-}
+/* ------------------------------------------BOOKMARKS */
 
-/* BOOKMARKS */
-
-.header__favourites {
-    z-index: 1;
+.header__bookmarks-container {
     background-color: ghostwhite;
-    padding-top: 12px;
-    position: absolute;
+    z-index: 4;
+    position: fixed;
     top: 65px;
     right: 0;
-    height: 100%;
-    width: 80%;
-    transition: width 80ms linear;
-    overflow: hidden;
-    display: none;
+    left: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px;
 }
 
-.article-list {
+.toggle__bookmarks {
+    transform: translateX(0);
+}
+
+.bookmark-list {
+    align-self: flex-start;
+    height: 90%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 5px;
 }
- 
-header input {
+
+.header__bookmarks__overlay {
     display: none;
 }
+
+.bookmark-list-element {
+    background-color: var(--transparent-dark2);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.bookmark-list-element span {
+    font-weight: 600;
+}
+
+.bookmark-link {
+    color: var(--dark-blue)
+}
+
+.bookmark-delete-btn {
+    align-self: flex-end;
+}
+
+/* ------------------------------------------BODY */
 
 #newsfeed {
     padding: 10px;
@@ -136,6 +186,8 @@ header input {
     width: 100vw;
     height: auto;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .article__title-container {
@@ -173,12 +225,11 @@ header input {
     font-weight: 700;
 }
 
-.bookmark-icon {
-    text-align: right;
-    padding-right: 7px;
+.bookmark-btn {
+    align-self: flex-end;
 }
 
-/* FOOTER */
+/* ------------------------------------------FOOTER */
 
 footer {
     background-color: var(--dark-blue);
