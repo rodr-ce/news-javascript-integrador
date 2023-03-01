@@ -3,6 +3,7 @@
 }
 
 .back {
+    padding-top: 5px;
     font-size: 12px;
     color: var(--dark-blue);
 }
@@ -30,3 +31,88 @@
     gap: 10px;
 }
 
+footer {
+    margin-top: 50px;
+}
+
+#textarea {
+    margin-top: 10px;
+    border-radius: 0.3em;
+    width: 300px;
+    height: 100px;
+    font-size: 14px;
+    border: 2px solid var(--transparent-dark2);
+}
+
+/* LOGIN Y REGISTRO */
+
+.divider {
+    align-self: center;
+    width: 300px;
+    height: 5px;
+    background-color: var(--transparent-dark2)
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.login span a {
+    color: var(--dark-blue);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.block {
+    font-size: 14px;
+    display: block;
+    margin: 5px;
+}
+
+.input-field {
+    border-radius: 0.3em;
+    width: 300px;
+    font-size: 16px;
+    border: 2px solid var(--transparent-dark2);
+}
+
+.login-check {
+    padding-top: 5px;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button.login-btn {
+    margin-top: 10px;
+    cursor: pointer;
+    border: 1px solid var(--dark-blue);
+    background-color: var(--light-blue);
+    color: white;
+    width: 150px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 16px;
+}
