@@ -14,7 +14,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+/*     border: 1px solid black;
+ */}
 
 a:link, a:visited, a:active {
     text-decoration: none;
@@ -49,7 +50,7 @@ body {
 /* ------------------------------------------HEADER */
 
 header {
-    width: 100%;
+    width: 100vw;
     height: 65px;
     background-color: var(--light-blue);
 }
@@ -116,22 +117,30 @@ header {
 
 /* ------------------------------------------BOOKMARKS */
 
-.bookmarks-container {
-    background-color: ghostwhite;
-    z-index: 4;
+.bookmarks-panel {
     position: fixed;
+    z-index: 4;
     top: 65px;
     right: 0;
     left: 0;
     bottom: 0;
-    overflow: scroll;
     transform: translateX(100%);
     transition: transform 0.2s;
+
+}
+
+.bookmarks-conteiner {
+    background-color: ghostwhite;
+    padding: 20px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 15px;
+    overflow: scroll;
+}
+
+.bookmarks-conteiner h4 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .toggle__bookmarks {
@@ -148,7 +157,7 @@ header {
     gap: 5px;
 }
 
-.header__bookmarks__overlay {
+.bookmarks__overlay {
     display: none;
 }
 
@@ -156,6 +165,7 @@ header {
     background-color: var(--transparent-dark2);
     padding: 15px;
     display: flex;
+    width: 95%;
     flex-direction: column;
     justify-content: center;
     gap: 7px;

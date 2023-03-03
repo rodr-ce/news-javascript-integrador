@@ -52,26 +52,26 @@
         </button>
         <nav class="header__nav">
           <ul class="header__nav__list">
-            <li>
+            <li class="hide">
               <button id="menu-toggle-close">
-                <i class="fa-solid fa-x"></i>
+                  <i class="fa-solid fa-x"></i>
               </button>
-            </li>
-            <li>
+          </li>
+          <li class="hide">
               <a href="./about.html">Sobre Nosotros</a>
-            </li>
-            <li>
+          </li>
+          <li class="hide">
               <a href="./about.html#contact">Contactenos</a>
-            </li>
-            <li>
-              <a href="./login-register.html"><i class="fa-solid fa-user"></i> Login/Registro</a>
-            </li>
+          </li>
+          <li class="nav-list-item">
+              <a href="./login-register.html">Login / Registro   <i class="fa-solid fa-user"></i></a>
+          </li>
           </ul>
           <div class="header__nav__overlay"></div>
         </nav>
       </div>
       <!-- ----------------------TITLE---------------------- -->
-      <div>☀️</div>
+      <div class="title">☀️</div>
       <!-- ----------------------BOOKMARKS---------------------- -->
       <div class="header__bookmarks">
         <button id="toggle-bookmarks">
@@ -80,10 +80,14 @@
       </div>
   </header>
   <!-- ----------------------CONTAINER---------------------- -->
-  <div class="bookmarks-container">
-    <h3 class="bookmarks-description"></h3>
-    <ul class="bookmark-list">
-    </ul>
+  <div class="bookmarks-panel">
+    <div class="bookmarks__overlay"></div>
+    <div class="bookmarks-conteiner">
+      <h4 class="bookmarks-description"></h4>
+      <ul class="bookmark-list">
+      </ul>
+    </div>
+    
   </div>
   <main>
     <!-- ----------------------HERO---------------------- -->

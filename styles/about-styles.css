@@ -1,3 +1,11 @@
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-evenly;
+}
+
 #hero {
     height: 200px;
 }
@@ -45,6 +53,12 @@ footer {
 }
 
 /* LOGIN Y REGISTRO */
+
+.login-register {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
 
 .divider {
     align-self: center;
@@ -115,4 +129,29 @@ button.login-btn {
     height: 30px;
     font-weight: 600;
     font-size: 16px;
+}
+
+@media (min-width: 991px)  {
+    .title {
+        display: none;
+    }
+    .header__nav-bar {
+        width: 100%;
+    }
+    .header__nav {
+        width: 100%;
+    }
+    .header__nav__list {
+        width: 100%;
+        justify-content: center;
+    }
+    .login-register {
+        flex-direction: row;
+    }
+    .divider {
+        align-self: center;
+        width: 5px;
+        height: 500px;
+        background-color: var(--transparent-dark2)
+    }
 }
