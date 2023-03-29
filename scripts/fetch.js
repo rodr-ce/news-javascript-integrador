@@ -1,14 +1,16 @@
-const key = '' // se iba a trabajar con newsapi.org pero el plan free solo lo permite en localhoost
-
 /* 
+const key = ''
 
 const getNews = async () => {
   const response = await fetch(`https://newsapi.org/v2/everything?q=liga%20profesional%20argentina&language=es&pageSize=30&apiKey=${key}`)
   const { articles } = await response.json()
   return articles
 }
+*/
 
- */
+// Inicialmente se iba a trabajar con newsapi.org pero tiene el CORS bloqueado
+// Para las cuentas free las API solo funciona en el entorno local
+// Se copió el tipo de respuestas de la API y se las guardo en arrays locales en /scripts/data.js
 
 const transformDate = (date) => {
   let getdate = date.split('T')

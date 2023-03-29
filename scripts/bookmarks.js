@@ -63,7 +63,7 @@ const saveBookmark = (i) => {
 
 renderBookmarks()
 
-const renderLib = () => {
+const showLibertadores = () => {
   currentCategory = [...libertadores]
   newsFeed.innerHTML = ''
   categoryLibertadores.classList.add('selected-category')
@@ -75,7 +75,7 @@ const renderLib = () => {
   colorize()
 }
 
-const renderLigaPro = () => {
+const showLigaProfesional = () => {
   currentCategory = [...ligaprofesional]
   newsFeed.innerHTML = ''
   categoryLiga.classList.add('selected-category')
@@ -87,7 +87,7 @@ const renderLigaPro = () => {
   colorize()
 }
 
-const renderSeleccion = () => {
+const showSeleccion = () => {
   currentCategory = [...seleccion]
   newsFeed.innerHTML = ''
   categorySeleccion.classList.add('selected-category')
@@ -117,12 +117,12 @@ const colorize = () => {
   }
 }
 
-const interactions = () => {
-  categoryLibertadores.addEventListener('click', renderLib)
-  categoryLiga.addEventListener('click', renderLigaPro)
-  categorySeleccion.addEventListener('click', renderSeleccion)
+const tabCategories = () => {
+  categoryLibertadores.addEventListener('click', showLibertadores)
+  categoryLiga.addEventListener('click', showLigaProfesional)
+  categorySeleccion.addEventListener('click', showSeleccion)
 }
 
-interactions()
+tabCategories()
 colorize()
 bookmarker()

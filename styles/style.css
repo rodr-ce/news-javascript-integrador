@@ -126,13 +126,14 @@ header {
     bottom: 0;
     transform: translateX(100%);
     transition: transform 0.2s;
-
+    display: flex;
+    height: 100%;
 }
 
 .bookmarks-conteiner {
     background-color: ghostwhite;
     padding: 20px;
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -158,7 +159,8 @@ header {
 }
 
 .bookmarks__overlay {
-    display: none;
+    background-color: var(--transparent);
+    width: 20%;
 }
 
 .bookmark-list-element {
